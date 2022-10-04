@@ -36,7 +36,7 @@ function parseMessage(message) {
 
 
 async function slackRequest(msg) {
-	let endpoint = process.env.get('SLACK_ENDPOINT');
+	let endpoint = SLACK_ENDPOINT;
 
 	try {
 
@@ -77,6 +77,6 @@ async function slackWebhookHandler(request) {
 		await slackRequest(orderData);
 		return simpleResponse(200, orderData);
 	} catch (e) {
-		return simpleResponse(200, `There is an issue: ${e}`);
+		return simpleResponse(200, `${e}`);
 	}
 }
