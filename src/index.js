@@ -36,8 +36,7 @@ function parseMessage(message) {
 
 
 async function slackRequest(msg) {
-	let endpoint = 'https://hooks.slack.com/services/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'; // the endpoint of order-bot channel
-	// let endpoint = 'https://hooks.slack.com/services/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'; // the endpoint of api_alert channel
+	let endpoint = process.env.get('SLACK_ENDPOINT');
 
 	try {
 
